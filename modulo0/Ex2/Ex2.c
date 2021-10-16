@@ -1,6 +1,5 @@
 #include <stdio.h>
-
-int sum(int , int); 
+#include "sum.h"
 
 int main(){
 	int a = 1;
@@ -13,8 +12,4 @@ int main(){
 	} while(finalResult < 10);
 	
 	return 0;
-}
-
-int sum(int a, int b){
-	return (a+b);
-}
+}	

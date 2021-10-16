@@ -1,6 +1,5 @@
 #include <stdio.h>
-
-void fill_array(int *vec);
+#include "fill_array.h"
 
 int main(){
 	
@@ -8,7 +7,7 @@ int main(){
 	
 	int vector[tamanho];
 	
-	fill_array(vector, tamanho);
+	fill_array(vector);
 	
 	int total = 0;
 	
@@ -18,20 +17,7 @@ int main(){
 	
 	float media = total/tamanho;
 	
-	printf("A média dos valores inseridos é %d\n", media); 
+	printf("A média dos valores inseridos é %.2f\n", media); 
 	
 	return 0;
-}
-
-void fill_array(int vector[]){
-	
-	int index = 0;
-
-	while(index<30){
-		printf("Enter a value for the index %d of the array: \n", index);
-		int input;
-		scanf("%d", &input);
-		vector[index] = input;
-		index++;
-	}
 }

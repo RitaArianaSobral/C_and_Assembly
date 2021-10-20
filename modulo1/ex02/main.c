@@ -3,7 +3,7 @@
 
 int main(){
 
-    int n = 3;
+    int n = 5;
     int vec1 [] = {17,23,1,5,7};
     int vec2 [5]; 
 

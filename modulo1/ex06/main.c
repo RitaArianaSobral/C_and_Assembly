@@ -3,12 +3,17 @@
 
 int main(){
 
-    int z = 5;
-    int* x = &z;
-    int y = 2;
-        
-    power_ref(x, y);
+    int x;
+    int y;
 
-    printf("%d\n", *x);
+    scanf("%d\n", &x);
+    scanf("%d", &y);
+        
+    if(y >= 0){
+        power_ref(&x, y);
+        printf("%d\n", x);
+    } else
+        printf("%d\n", 0);
+    
     return 0;
 }

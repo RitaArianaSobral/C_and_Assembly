@@ -9,11 +9,9 @@ int main(){
     scanf("%d\n", &x);
     scanf("%d", &y);
         
-    if(y >= 0){
-        power_ref(&x, y);
-        printf("%d\n", x);
-    } else
-        printf("%d\n", 0);
+    power_ref(&x, y);    
+
+    printf("%d\n", x);
     
     return 0;
 }

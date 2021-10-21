@@ -1,0 +1,4 @@
+void capitalize (char *str){
+
+    
+}

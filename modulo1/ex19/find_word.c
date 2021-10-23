@@ -1,4 +1,4 @@
-char* find_word(char* word, char* initial_addr){
+char* find_word(char* initial_addr, char* word){
     char *enderecoInicial;
     int existe=0;
 

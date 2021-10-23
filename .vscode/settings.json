@@ -1,7 +1,8 @@
 {
     "files.associations": {
         "copy_vec.h": "c",
-        "compress_shorts.h": "c"
+        "compress_shorts.h": "c",
+        "find_all_words.h": "c"
     },
     "C_Cpp.errorSquiggles": "Enabled"
 }

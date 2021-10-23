@@ -3,8 +3,8 @@
 
 int main(){
 
-    char str1 [] = "BelaDa";
-    char str2 [] = "JoanaBelaDaFavela";
+    char str1 [] = "BelaDo";
+    char str2 [] = "JoanaBelaDoPorto";
 
     printf("%p\n", where_exists(str1, str2));
 

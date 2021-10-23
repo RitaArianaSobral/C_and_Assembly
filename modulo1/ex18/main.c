@@ -3,17 +3,15 @@
 
 int main(){
 
-    char shorts [] = {2,4,5,6};
+    short shorts [] = {2,4,5,6};
     int n_shorts = 4;
-    int integers [(n_shorts/2)];
+    int integers [n_shorts];
 
     compress_shorts(shorts, n_shorts, integers);
 
     for(int i = 0; i < 2; i++){
-        printf("%d\n", *integers);
-        integers++;
+        printf("%d\n", *(integers+i));
     }
-
 
     return 0;
 }

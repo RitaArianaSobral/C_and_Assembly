@@ -1,6 +1,7 @@
 {
     "files.associations": {
-        "copy_vec.h": "c"
+        "copy_vec.h": "c",
+        "compress_shorts.h": "c"
     },
     "C_Cpp.errorSquiggles": "Enabled"
 }

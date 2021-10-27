@@ -9,12 +9,11 @@ int main(){
     char word [] = "gosta";
 
     char addrs [1][MAX_OCORRENCIAS];
-
     
     find_all_words(str, word, addrs);
 
     for(int i = 0; i< MAX_OCORRENCIAS; i++)
-        printf("%p", addrs[0][i]);
+        printf("%p\n", addrs[0][i]);
 
 
     return 0;

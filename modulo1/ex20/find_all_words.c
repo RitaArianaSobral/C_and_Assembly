@@ -1,8 +1,8 @@
 void find_all_words(char* str, char* word, char** addrs){
     int existe=0;
     
+    
     while(existe==0 && *(str) != '\0'){
-        int index = 0;
         int valid=0;
         if(*(word) == *(str)){
 
@@ -17,12 +17,12 @@ void find_all_words(char* str, char* word, char** addrs){
                 aux++;
             }
         }
-        if ( valid !=0){
+        if (valid !=0){
             existe=0;
         }
         if(existe == 1){
-            *(*addrs + index) = *str;
-            index++;
+            *addrs = str;
+            addrs++;
             existe = 0;
             valid = 0;            
         }

@@ -19,7 +19,7 @@ char* where_exists(char* str1, char* str2){
                 }
             }
             if(existsInside == 1)
-                pointToBeginning = &(*str2);
+                pointToBeginning = str2;
             str2++;
         }
 

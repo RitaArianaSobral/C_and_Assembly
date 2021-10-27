@@ -1,12 +1,21 @@
 #include <stdio.h>
 #include "check.h"
 
+int sets;
+
 int main(){
     
-    int vec[100];
-    populate(vec,100,20);
-    for (int i=0;i<100;i++){
-        check(*(vec+i),*(vec+i+1),*(vec+i+2);
+    int size = 100, limit = 20;
+    int vec[size];
+
+    sets=0;
+
+    populate(vec,size,limit);
+    
+    for (int i=0;i<size-2;i++){
+        if(check(*(vec+i),*(vec+i+1),*(vec+i+2)==1){
+            inc_nsets();
+        };
     }
 
     return 0;

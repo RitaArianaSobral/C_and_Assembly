@@ -1,4 +1,4 @@
-#include "sort_without_reps.h"
+#include "array_sort2.h"
 
 int sort_without_reps(int *src, int n, int *dest){
 

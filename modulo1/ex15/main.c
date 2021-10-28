@@ -3,7 +3,7 @@
 #include "inc_nsets.h"
 #include "populate.h"
 
-int sets;
+int sets=0;
 
 int main(){
     
@@ -12,13 +12,13 @@ int main(){
 
     populate(vec,size,limit);
     
-    sets=0;
-    
     for (int i=0;i<size-2;i++){
         if(check(*(vec+i),*(vec+i+1),*(vec+i+2)==1)){
             inc_nsets();
         }
     }
+
+    printf("%d\n",sets);
 
     return 0;
 }

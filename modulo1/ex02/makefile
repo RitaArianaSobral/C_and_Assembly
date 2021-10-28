@@ -1,9 +1,9 @@
-compileModules: odd_sum.c main.c
-	gcc -c -g -Wall odd_sum.c -o odd_sum.o
+compileModules: copy_vec.c main.c
+	gcc -c -g -Wall copy_vec.c -o copy_vec.o
 	gcc -c -g -Wall main.c -o main.o
 
 compileAll: compileModules
-	gcc -g -Wall main.o odd_sum.o -o mainCompiled.o
+	gcc -g -Wall main.o copy_vec.o -o mainCompiled.o
 
 run: compileAll
 	./mainCompiled.o

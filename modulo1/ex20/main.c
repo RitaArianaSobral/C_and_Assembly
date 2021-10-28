@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "find_all_words.h"
-#define MAX_OCORRENCIAS 10
+#define MAX_OCORRENCIAS 5
 
 int main(){
 
@@ -8,14 +8,9 @@ int main(){
 
     char word [] = "gosta";
 
-    char addrs [1][MAX_OCORRENCIAS];
-
+    char *addrs[MAX_OCORRENCIAS];
     
     find_all_words(str, word, addrs);
-
-    for(int i = 0; i< MAX_OCORRENCIAS; i++)
-        printf("%p", addrs[0][i]);
-
 
     return 0;
 }

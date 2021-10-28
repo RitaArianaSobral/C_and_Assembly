@@ -1,5 +1,5 @@
 prog: palindrome.o main.o
-	gcc palindrome.c main.o -o prog
+	gcc -Wall palindrome.c main.o -o prog
 
 palindrome.o: palindrome.c
 	gcc -g -Wall -c palindrome.c -o palindrome.o

@@ -1,5 +1,5 @@
 prog: populate.o inc_nsets.o check.o main.o
-	gcc populate.o inc_nsets.o check.o main.o -o prog
+	gcc -Wall populate.o inc_nsets.o check.o main.o -o prog
 
 populate.o: populate.c
 	gcc -g -Wall -c populate.c -o populate.o

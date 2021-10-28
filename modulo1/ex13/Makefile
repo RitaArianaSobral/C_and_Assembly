@@ -1,5 +1,5 @@
 prog: where_is.o main.o
-	gcc where_is.o main.o -o prog
+	gcc -Wall where_is.o main.o -o prog
 
 where_is.o: where_is.c
 	gcc -g -Wall -c where_is.c -o where_is.o

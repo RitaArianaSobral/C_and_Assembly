@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "sort_without_reps.h"
-#include "array_sort2.h"
 
 int main(){
 

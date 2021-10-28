@@ -1,5 +1,5 @@
 prog: sum_even.o main.o
-	gcc sum_even.o main.o -o prog
+	gcc -Wall sum_even.o main.o -o prog
 
 sum_even.o: sum_even.c
 	gcc -g -Wall -c sum_even.c -o sum_even.o

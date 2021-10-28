@@ -1,5 +1,5 @@
 prog: find_word.o main.o
-	gcc find_word.o main.o -o prog
+	gcc -Wall find_word.o main.o -o prog
 
 find_word.o: find_word.c
 	gcc -g -Wall -c find_word.c -o find_word.o

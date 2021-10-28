@@ -1,5 +1,5 @@
 prog: array_sort1.o main.o
-	gcc array_sort1.o main.o -o prog
+	gcc -Wall array_sort1.o main.o -o prog
 
 array_sort1.o: array_sort1.c
 	gcc -g -Wall -c array_sort1.c -o array_sort1.o

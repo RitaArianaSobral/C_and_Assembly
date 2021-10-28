@@ -1,5 +1,5 @@
 prog: swap.o main.o
-	gcc swap.o main.o -o prog
+	gcc -Wall swap.o main.o -o prog
 	
 swap.o: swap.c
 	gcc -g -Wall -c swap.c -o swap.o

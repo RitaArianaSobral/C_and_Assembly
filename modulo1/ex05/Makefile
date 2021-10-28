@@ -1,5 +1,5 @@
 prog: upper2.o main.o
-	gcc upper2.o main.o -o prog
+	gcc -Wall upper2.o main.o -o prog
 
 upper2.o: upper2.c
 	gcc -g -Wall -c upper2.c -o upper2.o

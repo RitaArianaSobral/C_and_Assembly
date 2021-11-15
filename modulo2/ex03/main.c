@@ -5,9 +5,9 @@ int op1=1, op2=3;
 
 int main() {
     
-    int banana = sum_v2();
+    int result = sum_v2();
 
-    printf("O resultado é %d", banana);
+    printf("O resultado é %d\n", result);
 
     return 0;
 }

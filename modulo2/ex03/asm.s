@@ -4,7 +4,6 @@
     .equ CONST, 15
 
 .section .text
-    .global sum # int sum(void)
     .global sum_v2 # int sum_v2(void)
 sum_v2:
     movl op1(%rip), %eax # place op1 in eax

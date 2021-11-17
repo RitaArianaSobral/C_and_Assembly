@@ -3,9 +3,9 @@
     .global op2
     .equ CONST, 15
 op3:
-    .long
+    .quad 3
 op4:
-    .long
+    .quad 7
 
 .global op3,op4
 
@@ -34,8 +34,12 @@ sum_v2:
 sum_v3:
     movq op4(%rip), %rax
     addq op3(%rip), %rax
-    subq op2(%rip), %rax
-    addq op1(%rip), %rax
+
+    movslq op2(%rip), %rcx
+    movslq op1(%rip), %rdx
+    
+    subq %rcx, %rax
+    addq %rdx, %rax
     
     ret
     

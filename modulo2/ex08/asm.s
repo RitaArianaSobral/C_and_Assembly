@@ -1,11 +1,17 @@
 .section .data
-    .global byte1
-    .global byte2
+s1:
+    .short 0
+
+s2:
+    .short 1
+
+.global s1, s2
 
 .section .text
-    .global concatBytes
-    
-concatBytes:
-    movb byte1(%rip), %al
-    movb byte2(%rip), %ah
-    ret
+    .global crossSumBytes
+
+crossSumBytes:
+    movw s1(%rip),%ax
+    movw s2(%rip),%cx
+    addb %cl, %ah
+    addb %ch, %al

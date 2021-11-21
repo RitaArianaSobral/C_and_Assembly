@@ -3,12 +3,11 @@
     .global op2
 
 .section .text
-    .global isMultiple
+    .global sum2ints
 
-isMultiple:
+sum2ints:
     movslq op1(%rip), %rax
     movslq op2(%rip), %rcx
     addq %rcx, %rax 
-    adcq %rcx, %rax
 
     ret

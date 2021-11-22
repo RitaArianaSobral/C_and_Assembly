@@ -8,8 +8,6 @@
     .global compute
 
 compute:
-    movl $0, %edx
-
     movl A(%rip), %eax
     movl B(%rip), %ecx
     imull %ecx, %eax
@@ -18,9 +16,17 @@ compute:
     addl %ecx,%eax
 
     movl D(%rip), %ecx
-    movl $0, %edx
-    idivl %ecx
 
+    je jump_if_equals
+
+    movl $0, %edx
+    cdq
+    idivl %ecx
+    jmp end
+jump_if_equals:
+    movl $0, %eax
+    jmp end
+end:
     ret
 
 

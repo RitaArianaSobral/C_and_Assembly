@@ -4,7 +4,7 @@
 int op1 = 2;
 int op2 = 78;
 
-int void(){
+int main (){
 
     char result = test_flags();
 

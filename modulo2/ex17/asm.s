@@ -37,7 +37,7 @@ division:
     ret
 
 modulus:
-    movl num1, %eax
+    movl num1(%rip), %eax
     cmp $0, %eax
 
     jl jump_is_less
@@ -52,15 +52,15 @@ end:
     ret
 
 power2:
-    movl num1, %eax
-    movl num1, %ecx
+    movl num1(%rip), %eax
+    movl num1(%rip), %ecx
     imul %ecx, %eax
     ret
 
 
 power3:
-    movl num1, %eax 
-    movl num1, %ecx
+    movl num1(%rip), %eax 
+    movl num1(%rip), %ecx
     imul %ecx, %eax
     imul %ecx, %eax
     ret

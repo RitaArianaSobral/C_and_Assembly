@@ -1,5 +1,5 @@
 main: main.o asm.o
-	gcc -g -Wall main.o asm.o -o mainCompiled.o
+	gcc -g main.o asm.o -o mainCompiled.o
 
 main.o: main.c asm.h
 	gcc -Wall -g -c main.c -o main.o
@@ -11,4 +11,4 @@ run: main
 	./mainCompiled.o
 
 clean:
-	rm *.o main
+	rm *.o

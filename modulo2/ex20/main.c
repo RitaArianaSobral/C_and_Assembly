@@ -1,12 +1,13 @@
-#include "stdio.h"
+#include <stdio.h>
 #include "asm.h"
 
-int i = 1;
+int num = 0;
 
-int main(){
+int main(void){
 
-    int result = summation();
-    printf("Resultado: %d\n", result);
+    char result = check_num();
+
+    printf("The result is: %c\n", result);
 
     return 0;
 }

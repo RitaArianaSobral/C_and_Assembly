@@ -1,4 +1,4 @@
 #ifndef ASM_H
 #define ASM_H
-int summation();
+char check_num();
 #endif

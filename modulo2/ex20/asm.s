@@ -1,24 +1,62 @@
 .section .data
-    .global i
-    .equ constA, 1
-    .equ constB, 1
+    .global num
+    .equ div, 2
+
+evenNegativeVar:
+    .byte 1
+
+oddNegativeVar:
+    .byte 2
+
+evenPositiveVar:
+    .byte 3
+
+oddPositiveVar:
+    .byte 4
+
 
 .section .text
-    .global summation
+    .global check_num
 
-summation:
-    movl i(%rip), %r8d
-    movl $constA, %eax
-    movl $constB, %ecx # mov para os devidos registos
+check_num:
+    movl num(%rip), %eax # mover o numero para %eax  
+    movl num(%rip), %ecx # mover o numero para %ecx para depois comparar
+    movq $div, %rdi # mover o divisor para o devido registo
 
-    imul %r8d, %r8d # valor ^2
-    imul %eax # valor ^2
-     
-    imul %r8d, %eax
+    movq $0, %rdx
+    cdqe
+    divq %rdi, %rax
 
-    # idiv %
+    cmpq $0, %rdx
+    je even
+    jne odd
 
-    # cmpq
+    ret
 
-end:
+even:
+    movl $0, %eax
+    cmpl $0, %ecx
+    js evenNegative
+    jns evenPositive 
+
+odd:
+    movl $0, %eax
+    cmpl $0, %ecx
+    js oddNegative
+    jns oddPositive 
+
+evenNegative:
+    movb evenNegativeVar(%rip), %al
+    ret
+
+evenPositive:
+    movb evenPositiveVar(%rip), %al
+    ret
+
+oddNegative:
+    movb oddNegativeVar(%rip), %al
+    ret
+
+oddPositive:
+    movb oddPositiveVar(%rip), %al
     ret

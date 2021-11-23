@@ -1,7 +1,7 @@
 #include "stdio.h"
 #include "asm.h"
 
-int counter = 1;
+int i = 1;
 
 int main(){
 

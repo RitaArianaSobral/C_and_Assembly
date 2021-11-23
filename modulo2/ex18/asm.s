@@ -1,27 +1,43 @@
 .section .data
-    .global num
+    .equ constA, 1
+    .equ constB, 1
+    
+nMax:
+    .int 2
+
+.global counter, nMax
 
 .section .text
-    .global steps
+    .global summation
 
-steps:
-    movq num(%rip), %r8 #save the number when subtracting
+summation:
+    movl counter(%rip), %r8d # mov contador (i) para o devido registo
+    movl counter(%rip), %esi # mov contador (i) para o registo usado para calculos
+    movl nMax(%rip), %r9d # mov n limite (n) para o devido registo
+    movl $constA, %eax # mov constante A para o devido registo
+    movl $constB, %ecx # mov constante B para o devido registo
+    movl $0, %edi # local de armazenament do somatorio
+    jmp myLoop
 
-    movq num(%rip), %rax
-    movq $3, %rcx
-    imul %rcx, %rax # multiplication by 3
+myLoop:
+    cmpl %r8d, %r9d # comparacao para verificar o fim do ciclo
+    jl endLoop # enquanto nMax é maior que n
 
-    addq $6, %rax # sum 6 
 
-    movq $0, %rdx
-    movq $3, %rcx
-    cqo
-    idivq %rcx # divide by 3
+    imul %esi, %esi # i^2 
+    imul %eax, %eax # A^2
+    imul %r8d, %eax # i^2 * A^2
+    movl $0, %edx # Limpar edx para a divisao
+    idiv %ecx # (i^2 * A^2) / B
+
     
-    addq $12, %rax # sum 12 
+    addl %eax, %edi # soma do total da iteração do ciclo para edi
+    movl $constA, %eax # mov constante A para o devido registo
+    movl $constB, %ecx # mov constante B para o devido registo
 
-    subq %r8, %rax # subtract num
+    incl %r8d
+    jmp myLoop
 
-    subq $1, %rax # subtract 1
-
+endLoop:
+    movl %edi, %eax
     ret

@@ -1,11 +1,11 @@
-#include "stdio.h"
+#include <stdio.h>
 #include "asm.h"
 
-long num = -1000;
+int counter = 1;
 
 int main(){
 
-    int result = steps();
+    int result = summation();
     printf("Resultado: %d\n", result);
 
     return 0;

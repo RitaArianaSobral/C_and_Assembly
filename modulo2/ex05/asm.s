@@ -5,6 +5,6 @@
     .global swapBytes
 swapBytes:
     movw s(%rip),%cx
-    movb %cl, %ah
+    movb %dl, %ah
     movb %ch, %al
     ret

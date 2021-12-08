@@ -8,5 +8,5 @@
 crossSumBytes:
     movw s1(%rip),%ax
     movw s2(%rip),%cx
-    addb %cl, %ah
+    addb %dl, %ah
     addb %ch, %al

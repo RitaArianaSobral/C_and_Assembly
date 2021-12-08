@@ -9,10 +9,10 @@ zero_count:
 	movl $0, %eax
     jmp loop 
 loop:
-		movb (%rdx),%cl
-		cmpb $0,%cl
+		movb (%rdx),%dl
+		cmpb $0,%dl
 		je end
-		cmpb $48,%cl
+		cmpb $48,%dl
 		je equals
 		incq %rdx
 		jmp loop
@@ -24,4 +24,4 @@ equals:
 
 end:
     ret
-    
+	   

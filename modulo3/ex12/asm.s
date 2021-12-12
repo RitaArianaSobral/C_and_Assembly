@@ -1,81 +1,43 @@
 .section .data
-    .global even
     .global ptrvec
     .global num
 
 .section .text
-    .global test_even, vec_sum_even
+    .global vec_zero
 
-test_even:
-    movl $0, %eax
-    movl $0, %edx
-    movl $0, %ecx
+vec_zero:
+    movl $0, %eax # rax cleaning
+    movq ptrvec(%rip), %rax # pointer to rax
 
-    movq even(%rip), %rax 
+    movl $0, %esi # contador de updates
 
-    jmp func
-
-func:
-    movq $2, %rcx 
-    idivq %rcx
+    movl $0, %r8d # contador em r8d de iteraçoes
+    movl num(%rip), %r9d # contador em r9d de tamanho
     
-    cmpq $0, %rdx
-    jne isOdd
-    je isEven
-
-isOdd:
-    movl $0, %eax
-    ret
-
-isEven:
-    movl $1, %eax
-    ret
-
-
-# Second Function
-
-vec_sum_even:
-
-    movl $0, %r8d
-    movq ptrvec(%rip), %r8 # passagem do conteudo do pointer para r8
-
-    movl $0, %ecx # limpeza do registo que armazenará a soma
-
-    movl $0, %edi
-    movq $2, %rdi # divisor para edi
-    
-    movl num(%rip), %esi # tamanho do array
-    
-    movl $0, %r9d # contador do numero de iteracoes
-    # incl %r9d # incrementa por conta da ultima
-
     jmp loop
 
 loop:
-    movl (%r8), %eax # passagem do dividendo para o registo devido
-
-    cmpl %r9d, %esi
+    cmpl %r8d, %r9d
     je end
 
-    # cdqe # prep do dividendo
-    cqo
-    idivq %rdi # divisao
+    movl $0, %ecx
+    movw (%rax), %cx
 
-    cmpq $0, %rdx # comparacao resto
-    je evenNum # se 0, vai para a func
-    
+    cmpw $100, %cx
+    jge changeToZero
+
     jmp nextIteration
 
-
-evenNum:
-    addl (%r8), %ecx
+changeToZero:
+    movw $0, (%rax)
+    incl %esi
     jmp nextIteration
 
 nextIteration:
-    incl %r9d
-    addq $4, %r8
+    addq $2, %rax
+    incl %r8d
     jmp loop
-
+    
 end:
-    movl %ecx, %eax
+    movl %esi, %eax
     ret

@@ -1,19 +1,19 @@
 #include <stdio.h>
 #include "asm.h"
-#define MAX_SIZE 2
+#define MAX_SIZE 3
 
-long even = 7;
+short *ptrvec;
 int num = MAX_SIZE;
-int *ptrvec;
 
 int main(){
 
-    int arrayLong[MAX_SIZE] = {3,2};
-    ptrvec = arrayLong;
-    int result = test_even();
-    int result2 = vec_sum_even();
+    short array[MAX_SIZE] = {0, 1, 2};
+    ptrvec = array;
 
-    printf("%d\n", result);
-    printf("%d\n", result2);
+    unsigned char numUpdates = vec_zero();
+
+    printf("%d\n", ptrvec);
+      
+    
     return 0;
 }
